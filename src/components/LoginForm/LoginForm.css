@@ -1,10 +1,9 @@
-.form {
+.login-form {
   display: flex;
   justify-content: center;
-  margin: 40px 0;
+  margin: 10% 0;
   color: rgb(85, 83, 83);
 }
-
 input {
   width: 100%;
   border: 1px solid #ccc;
@@ -14,23 +13,14 @@ input {
   cursor: pointer;
   float: right;
 }
+
 label {
-  padding: 0;
+  padding: 0px;
   display: inline-block;
 }
-
-button {
-  margin: 10px 75px 0 0;
-  padding: 8px;
-  background-color: transparent;
-  border: 2px solid #0099cc;
-  border-radius: 5px;
-  text-transform: uppercase; /* Make letters uppercase */
-}
-
 @media only screen and (max-width: 600px) {
-  .form {
-    margin: 10px 0;
+  .login-form {
+    margin: 40% 0;
     padding: 5px 5px 5px 0;
   }
 }

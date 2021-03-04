@@ -1,0 +1,17 @@
+.description {
+  text-align: center;
+  margin: 50px;
+  font-weight: 800;
+  font-size: 30px;
+  color: rgb(85, 83, 83);
+}
+
+@media only screen and (max-width: 600px) {
+  .description {
+    text-align: left;
+    margin: 50px 0 0 0;
+    padding: 0 35px;
+    font-weight: 500;
+    font-size: 20px;
+  }
+}

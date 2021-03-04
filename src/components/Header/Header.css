@@ -1,0 +1,24 @@
+h1 {
+  margin: 0;
+  padding: 0;
+}
+li {
+  display: inline-block;
+  padding: 10px 10px;
+}
+.auth-link {
+  font-weight: 700;
+  font-size: 30px;
+}
+:is(.header) a:visited {
+  color: inherit;
+}
+:is(.header) a:hover {
+  color: rgb(10, 20, 72);
+}
+
+@media only screen and (max-width: 600px) {
+  .auth-link {
+    font-size: 20px;
+  }
+}
