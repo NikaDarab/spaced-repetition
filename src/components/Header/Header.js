@@ -16,11 +16,13 @@ class Header extends Component {
     return (
       <div>
         <span>{this.context.user.name}</span>
-        <li>
-          <Link onClick={this.handleLogoutClick} to="/login">
-            Logout
-          </Link>
-        </li>
+        <nav>
+          <li>
+            <Link onClick={this.handleLogoutClick} to="/login">
+              Logout
+            </Link>
+          </li>
+        </nav>
       </div>
     );
   }
@@ -28,13 +30,14 @@ class Header extends Component {
   renderLoginLink() {
     return (
       <>
-        <li className="auth-link" style={{ float: "right" }}>
-          <Link to="/login">Login</Link>
-        </li>
-
-        <li className="auth-link" style={{ float: "right" }}>
-          <Link to="/register">Sign up</Link>
-        </li>
+        <nav>
+          <li className="auth-link">
+            <Link to="/login">Login</Link>
+          </li>{" "}
+          <li className="auth-link">
+            <Link to="/register">Sign up</Link>
+          </li>
+        </nav>
       </>
     );
   }
@@ -43,9 +46,11 @@ class Header extends Component {
     return (
       <>
         <header className="header">
-          <li className="auth-link">
-            <Link to="/">Italingo</Link>
-          </li>
+          <h1>
+            <li>
+              <Link to="/">Italingo</Link>
+            </li>
+          </h1>
           {TokenService.hasAuthToken()
             ? this.renderLogoutLink()
             : this.renderLoginLink()}

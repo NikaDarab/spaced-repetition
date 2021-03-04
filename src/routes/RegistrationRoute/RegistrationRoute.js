@@ -18,9 +18,9 @@ class RegistrationRoute extends Component {
       <section>
         <p className="description animate__animated animate__pulse">
           Practice learning a language with the spaced reptition revision
-          technique
+          technique.
         </p>
-
+        <h2 style={{ display: "none" }}>Sign up</h2>
         <RegistrationForm
           onRegistrationSuccess={this.handleRegistrationSuccess}
         />
