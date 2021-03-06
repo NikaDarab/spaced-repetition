@@ -20,7 +20,19 @@ a:link {
 :root {
   --font-size: calc(10px + 1vmin);
 }
+
+.word-card {
+  display: inline-block;
+  border: 2px solid tomato;
+}
+
+.start-button {
+  display: flex;
+  justify-content: center;
+}
 @media only screen and (max-width: 600px) {
-  body {
+  .word-card {
+    font-size: 10px;
+    border: solid black;
   }
 }
