@@ -7,10 +7,10 @@
   position: absolute;
   width: 35%;
   height: auto;
-  bottom: 5%;
+  bottom: 0%;
 }
 @media only screen and (max-width: 600px) {
   .italingo-img {
-    width: 380px;
+    width: 40%;
   }
 }

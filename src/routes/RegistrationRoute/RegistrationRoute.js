@@ -16,11 +16,11 @@ class RegistrationRoute extends Component {
   render() {
     return (
       <section>
-        <h2 className="description animate__animated animate__pulse">
-          Practice learning a language with the spaced reptition revision
+        <p className="description animate__animated animate__pulse">
+          Practice learning a language with the spaced repetition revision
           technique.
-        </h2>
-        <h2 style={{ display: "none" }}>Sign up</h2>
+        </p>
+        <h2>Sign up</h2>
         <RegistrationForm
           onRegistrationSuccess={this.handleRegistrationSuccess}
         />

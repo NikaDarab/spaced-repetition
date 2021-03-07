@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import config from "../config";
+import TokenService from "./token-service";
 
 let options = {
   headers: {
-    Authorization: `Bearer ${config.TOKEN_KEY}`,
+    // Authorization: `Bearer ${config.TOKEN_KEY}`,
+    Authorization: `Bearer ${TokenService.getAuthToken()}`,
   },
 };
 const LanguageApiService = {
