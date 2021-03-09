@@ -1,0 +1,5 @@
+section,
+.submit-button {
+  display: flex;
+  justify-content: center;
+}
