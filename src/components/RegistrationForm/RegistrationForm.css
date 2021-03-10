@@ -1,7 +1,7 @@
 .form {
   display: flex;
   justify-content: center;
-  margin: 10px 0;
+  margin: 1% auto;
   color: rgb(85, 83, 83);
 }
 

@@ -44,8 +44,8 @@ export class ContextsProvider extends Component {
     LanguageApiService.getWords().then((res) => {
       this.setState({
         words: res,
-        original: res[0].original,
-        translation: res[0].translation,
+        original: res.original,
+        translation: res.translation,
       });
     });
     LanguageApiService.getNextWord().then((res) => {
