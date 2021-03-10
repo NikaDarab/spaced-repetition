@@ -40,14 +40,13 @@ const LanguageApiService = {
         "content-type": "application/json",
       },
       body: body,
-    })
-      .then((res) => {
-        if (!res.ok) {
-          res.json().then((e) => Promise.reject(e));
-        }
-        return res.json();
-      })
-      .catch((e) => console.error(e));
+    }).then((res) => {
+      if (!res.ok) {
+        return res.json().then((e) => Promise.reject(e));
+      }
+      return res.json();
+    });
+    // .catch((e) => console.error(e));
   },
 };
 

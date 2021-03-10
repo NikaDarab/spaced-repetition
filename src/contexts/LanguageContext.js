@@ -6,11 +6,15 @@ export const LanguageContext = React.createContext({
   language: {},
   nextWord: "",
   guess: "",
+  answer: "",
   original: "",
   translation: "",
   incorrectCount: null,
   correctCount: null,
   totalScore: null,
+  displayResult: false,
+  isCorrect: null,
+  prevWord: null,
 });
 
 export class ContextsProvider extends Component {
@@ -22,9 +26,13 @@ export class ContextsProvider extends Component {
     correctCount: null,
     totalScore: null,
     guess: "",
+    answer: "",
     original: "",
     translation: "",
     error: null,
+    displayResult: false,
+    isCorrect: null,
+    prevWord: null,
   };
 
   componentWillMount() {
@@ -41,7 +49,6 @@ export class ContextsProvider extends Component {
       });
     });
     LanguageApiService.getNextWord().then((res) => {
-      console.log(res);
       this.setState({
         nextWord: res.nextWord,
         incorrectCount: res.wordIncorrectCount,
@@ -66,16 +73,38 @@ export class ContextsProvider extends Component {
       incorrectCount,
     });
   };
-  handleGuessWord = (guess) => {
-    console.log(guess);
+
+  setDisplayResult = (bool) => {
+    this.setState({
+      displayResult: bool,
+    });
+  };
+
+  setIsCorrect = (isCorrect) => {
+    this.setState({
+      isCorrect,
+    });
+  };
+
+  setPrevWord = (prevWord) => {
+    this.setState({
+      prevWord,
+    });
+  };
+  setNextWord = (nextWord) => {
+    this.setState({
+      nextWord,
+    });
+  };
+  setGuess = (guess) => {
     this.setState({
       guess,
     });
   };
 
-  setNextWord = (nextWord) => {
+  setAnswer = (answer) => {
     this.setState({
-      nextWord,
+      answer,
     });
   };
   render() {
@@ -89,11 +118,20 @@ export class ContextsProvider extends Component {
       guess: this.state.guess,
       original: this.state.original,
       translation: this.state.translation,
+      displayResult: this.state.displayResult,
+      prevWord: this.state.prevWord,
+      answer: this.state.answer,
       handleGuessWord: this.handleGuessWord,
+      isCorrect: this.state.isCorrect,
       setTotalScore: this.setTotalScore,
       setCorrectCount: this.setCorrectCount,
       setIncorrectCount: this.setIncorrectCount,
       setNextWord: this.setNextWord,
+      setDisplayResult: this.setDisplayResult,
+      setIsCorrect: this.setIsCorrect,
+      setPrevWord: this.setPrevWord,
+      setGuess: this.setGuess,
+      setAnswer: this.setAnswer,
     };
     return (
       <LanguageContext.Provider value={value}>
