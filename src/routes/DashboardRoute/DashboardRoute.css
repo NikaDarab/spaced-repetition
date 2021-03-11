@@ -1,0 +1,31 @@
+.language {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.scoreboard {
+  margin: 20px auto;
+}
+.parent-button {
+  display: flex;
+  justify-content: center;
+}
+.practice-button {
+  padding: 8px;
+  background-color: transparent;
+  border: 2px solid #0099cc;
+  border-radius: 5px;
+  text-transform: uppercase;
+}
+
+.single-word {
+  border: solid 0.2px black;
+  padding: 10px 5px;
+  margin: 25px 4px;
+  font-size: 15px;
+}
+
+.word-cards {
+  margin: 0 10px;
+}

@@ -10,6 +10,18 @@ nav {
   float: right;
   margin: -55px 0;
 }
+
+.header {
+  background-image: url("/src/assets/Italian_Flag.gif");
+}
+
+.username {
+  display: flex;
+  text-align: left;
+  margin: 0 15px;
+  font-weight: 700;
+  font-size: 20px;
+}
 .auth-link {
   font-weight: 700;
   font-size: 30px;

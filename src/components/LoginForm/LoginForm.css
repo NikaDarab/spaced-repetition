@@ -20,7 +20,5 @@ label {
 }
 @media only screen and (max-width: 600px) {
   .login-form {
-    margin: 40% 0;
-    padding: 5px 5px 5px 0;
   }
 }

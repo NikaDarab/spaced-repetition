@@ -19,7 +19,7 @@ class LoginRoute extends Component {
     return (
       <section>
         <LoginForm onLoginSuccess={this.handleLoginSuccess} />
-        <h2>Login</h2>
+        <h2 style={{ display: "none" }}>Login</h2>
       </section>
     );
   }
