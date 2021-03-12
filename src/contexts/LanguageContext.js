@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import LanguageApiService from ".././services/language-api-service";
+// import LanguageApiService from ".././services/language-api-service";
 
 export const LanguageContext = React.createContext({
   words: [],
@@ -38,28 +38,28 @@ export class ContextsProvider extends Component {
     };
   }
 
-  componentWillMount() {
-    LanguageApiService.getLanguage().then((language) =>
-      this.setState({
-        language,
-      })
-    );
-    LanguageApiService.getWords().then((res) => {
-      this.setState({
-        words: res,
-        original: res.original,
-        translation: res.translation,
-      });
-    });
-    LanguageApiService.getNextWord().then((res) => {
-      this.setState({
-        nextWord: res.nextWord,
-        incorrectCount: res.wordIncorrectCount,
-        correctCount: res.wordCorrectCount,
-        totalScore: res.totalScore,
-      });
-    });
-  }
+  // componentWillMount() {
+  //   LanguageApiService.getLanguage().then((language) =>
+  //     this.setState({
+  //       language,
+  //     })
+  //   );
+  //   LanguageApiService.getWords().then((res) => {
+  //     this.setState({
+  //       words: res,
+  //       original: res.original,
+  //       translation: res.translation,
+  //     });
+  //   });
+  //   LanguageApiService.getNextWord().then((res) => {
+  //     this.setState({
+  //       nextWord: res.nextWord,
+  //       incorrectCount: res.wordIncorrectCount,
+  //       correctCount: res.wordCorrectCount,
+  //       totalScore: res.totalScore,
+  //     });
+  //   });
+  // }
 
   setLanguage = (language) => {
     this.setState({
