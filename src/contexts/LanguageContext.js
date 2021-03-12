@@ -96,7 +96,7 @@ export class ContextsProvider extends Component {
   };
   setIncorrectCount = (incorrectCount) => {
     this.setState({
-      incorrectCount,
+      incorrectCount: incorrectCount + 1,
     });
   };
 
