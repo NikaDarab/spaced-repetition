@@ -32,7 +32,7 @@ class RegistrationForm extends Component {
         this.setState({ error: res.error });
       });
 
-    this.props.history.push("/learn");
+    // this.props.history.push("/learn");
   };
 
   componentDidMount() {
