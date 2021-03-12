@@ -1,6 +1,5 @@
 import config from "../config";
 import TokenService from "./token-service";
-
 let options = {
   headers: {
     Authorization: `Bearer ${TokenService.getAuthToken()}`,

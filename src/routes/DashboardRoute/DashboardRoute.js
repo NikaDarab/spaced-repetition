@@ -1,10 +1,27 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { LanguageContext } from "../../contexts/LanguageContext";
+import LanguageApiService from "../../services/language-api-service";
 import "./DashboardRoute.css";
 class DashboardRoute extends Component {
   static contextType = LanguageContext;
 
+  componentDidMount() {
+    LanguageApiService.getLanguage().then((language) =>
+      this.context.setLanguage(language)
+    );
+    LanguageApiService.getWords().then((res) => {
+      this.context.setWords(res);
+      this.context.setOriginal(res.original);
+      this.context.setTranslation(res.translation);
+    });
+    LanguageApiService.getNextWord().then((res) => {
+      this.context.setNextWord(res.nextWord);
+      this.context.setIncorrectCount(res.wordIncorrectCount);
+      this.context.setCorrectCount(res.wordCorrectCount);
+      this.context.setTotalScore(res.totalScore);
+    });
+  }
   render() {
     return (
       <section>
@@ -33,7 +50,14 @@ class DashboardRoute extends Component {
                     key={word.id}
                   >
                     <h4>{word.original}</h4>
-                    <p>correct answer count: {word.correct_count}</p>
+                    <p
+                      style={{
+                        fontSize: "16.7px",
+                        padding: "5px 0",
+                      }}
+                    >
+                      correct answer count: {word.correct_count}
+                    </p>
                     <p>incorrect answer count: {word.incorrect_count}</p>
                   </li>
                 );

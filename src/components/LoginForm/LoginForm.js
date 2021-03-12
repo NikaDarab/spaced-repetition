@@ -4,6 +4,7 @@ import AuthApiService from "../../services/auth-api-service";
 import UserContext from "../../contexts/UserContext";
 import Button from "../Button/Button";
 import "./LoginForm.css";
+
 class LoginForm extends Component {
   static defaultProps = {
     onLoginSuccess: () => {},
@@ -30,6 +31,7 @@ class LoginForm extends Component {
         password.value = "";
         this.context.processLogin(res.authToken);
         this.props.onLoginSuccess();
+        window.location = "/";
       })
       .catch((res) => {
         this.setState({ error: res.error });

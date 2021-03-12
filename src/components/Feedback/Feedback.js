@@ -20,7 +20,9 @@ class Feedback extends Component {
             {this.context.answer} and you chose {this.context.guess}!
           </p>
         </div>
-        <button onClick={this.handleSubmit}>Try another word!</button>
+        <button className="submit-button" onClick={this.handleSubmit}>
+          Try another word!
+        </button>
       </div>
     );
   }

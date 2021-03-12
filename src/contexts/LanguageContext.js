@@ -18,22 +18,25 @@ export const LanguageContext = React.createContext({
 });
 
 export class ContextsProvider extends Component {
-  state = {
-    words: [],
-    language: {},
-    nextWord: "",
-    incorrectCount: 0,
-    correctCount: 0,
-    totalScore: 0,
-    guess: "",
-    answer: "",
-    original: "",
-    translation: "",
-    error: null,
-    displayResult: false,
-    isCorrect: null,
-    prevWord: null,
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      words: [],
+      language: {},
+      nextWord: "",
+      incorrectCount: 0,
+      correctCount: 0,
+      totalScore: 0,
+      guess: "",
+      answer: "",
+      original: "",
+      translation: "",
+      error: null,
+      displayResult: false,
+      isCorrect: null,
+      prevWord: null,
+    };
+  }
 
   componentWillMount() {
     LanguageApiService.getLanguage().then((language) =>
@@ -58,6 +61,29 @@ export class ContextsProvider extends Component {
     });
   }
 
+  setLanguage = (language) => {
+    this.setState({
+      language,
+    });
+  };
+
+  setWords = (words) => {
+    this.setState({
+      words,
+    });
+  };
+
+  setOriginal = (original) => {
+    this.setState({
+      original,
+    });
+  };
+
+  setTranslation = (translation) => {
+    this.setState({
+      translation,
+    });
+  };
   setTotalScore = (totalScore) => {
     this.setState({
       totalScore,
@@ -132,6 +158,10 @@ export class ContextsProvider extends Component {
       setPrevWord: this.setPrevWord,
       setGuess: this.setGuess,
       setAnswer: this.setAnswer,
+      setLanguage: this.setLanguage,
+      setWords: this.setWords,
+      setOriginal: this.setOriginal,
+      setTranslation: this.setTranslation,
     };
     return (
       <LanguageContext.Provider value={value}>
