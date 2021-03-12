@@ -21,15 +21,16 @@ class RegistrationForm extends Component {
       name: name.value,
       username: username.value,
       password: password.value,
-    }).then((user) => {
-      name.value = "";
-      username.value = "";
-      password.value = "";
-      this.props.onRegistrationSuccess();
-    });
-    this.history.push("/learn").catch((res) => {
-      this.setState({ error: res.error });
-    });
+    })
+      .then((user) => {
+        name.value = "";
+        username.value = "";
+        password.value = "";
+        this.props.onRegistrationSuccess();
+      })
+      .catch((res) => {
+        this.setState({ error: res.error });
+      });
   };
 
   componentDidMount() {
