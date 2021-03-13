@@ -38,6 +38,7 @@ class RegistrationForm extends Component {
           password.value = "";
           this.context.processLogin(res.authToken);
           this.props.onRegistrationSuccess();
+          window.location = "/";
         });
       })
       .catch((res) => {
