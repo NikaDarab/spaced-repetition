@@ -8,7 +8,7 @@ import LoginRoute from "../../routes/LoginRoute/LoginRoute";
 import DashboardRoute from "../../routes/DashboardRoute/DashboardRoute";
 import LearningRoute from "../../routes/LearningRoute/LearningRoute";
 import NotFoundRoute from "../../routes/NotFoundRoute/NotFoundRoute";
-import italingo2 from "../../assets/italingo-2.png";
+
 import { ContextsProvider } from "../../contexts/LanguageContext";
 
 import "./App.css";
@@ -44,13 +44,6 @@ export default class App extends Component {
                 <Route component={NotFoundRoute} />
               </Switch>
             </main>
-            <div className="image">
-              <img
-                className="italingo-img"
-                src={italingo2}
-                alt="italingo logo, kids learning"
-              />
-            </div>
           </div>
         </ContextsProvider>
       </BrowserRouter>
